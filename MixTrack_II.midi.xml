@@ -8,12 +8,22 @@
         <controls>
             <control>
                 <group>[Channel1]</group>
-                <key>cue_default</key>
-                <description>MIDI Learned from 2 messages.</description>
+                <key>rate_temp_down</key>
+                <description>Tempo / pitch bend down.</description>
+                <status>0x90</status>
+                <midino>0x43</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>		
+            <control>
+                <group>[Channel1]</group>
+                <key>NumarkMixTrackII.cue</key>
+                <description>Cue button</description>
                 <status>0x90</status>
                 <midino>0x33</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -63,16 +73,6 @@
                 <midino>0x5F</midino>
                 <options>
                     <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>rate_temp_down</key>
-                <description>MIDI Learned from 6 messages.</description>
-                <status>0x90</status>
-                <midino>0x43</midino>
-                <options>
-                    <normal/>
                 </options>
             </control>
             <control>
@@ -167,12 +167,12 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>play</key>
-                <description>MIDI Learned from 10 messages.</description>
+                <key>NumarkMixTrackII.play</key>
+                <description>Play buton.</description>
                 <status>0x90</status>
                 <midino>0x42</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -197,12 +197,12 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>cue_default</key>
-                <description>MIDI Learned from 2 messages.</description>
+                <key>NumarkMixTrackII.cue</key>
+                <description>Channel cue button</description>
                 <status>0x90</status>
                 <midino>0x3C</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -287,12 +287,12 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>play</key>
-                <description>MIDI Learned from 4 messages.</description>
+                <key>NumarkMixTrackII.play</key>
+                <description>Play button.</description>
                 <status>0x90</status>
                 <midino>0x3B</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>

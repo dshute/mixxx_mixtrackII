@@ -6,22 +6,6 @@
 	<dshute@gmail.com>
 
 	based of Numark Mixtrack mappings by Matteo <matteo@magm3.com>
-	
-	******************* TO DO *******************************
-	
-	
-	******************* TO DO *******************************
-	Channel 1
-		- fx knobs along top of pads
-		- pads 1 - 4 > shift mode
-		- page 5 - loop / reloop / must satisfy shift mode changes
-		- jogwheel & scratch button
-		- cue / play / pause agreement
-		- stutter functionality
-		
-	Master
-		- file browser
-		- back button
 		
  */
 
@@ -320,10 +304,51 @@ NumarkMixTrackII.filterKill = function(channel, control, value, status, group) {
 	}
 }
 
+NumarkMixTrackII.cue = function(channel, control, value, status, group) {
+	deck = NumarkMixTrackII.groupToDeck(group);
+	
+	// check if the group is playing 
+	playValue = engine.getValue(group, "play");
+	
+	// respond on cue release
+	if (value == 0x00) { 
+		switch (playValue) {
+			case 0:
+				engine.setValue(group, "cue_set", 1);
+				break;
+			case 1:
+				engine.setValue(group, "cue_gotoandstop", 1);
+				break;						
+		}
+		NumarkMixTrackII.setLED(NumarkMixTrackII.leds[deck]["cue"], true);
+		NumarkMixTrackII.setLED(NumarkMixTrackII.leds[deck]["play"], false);
+	}
+}
+
+NumarkMixTrackII.play = function(channel, control, value, status, group) {
+	deck = NumarkMixTrackII.groupToDeck(group);
+	
+	// check if the group is playing
+	playValue = engine.getValue(group, "play");
+	
+	// respond on play release
+	if (value == 0x00) {
+		switch (playValue) {
+			case 0:
+				engine.setValue(group, "play", 1);
+				NumarkMixTrackII.setLED(NumarkMixTrackII.leds[deck]["cue"], false);
+				break;
+			case 1:
+				engine.setValue(group, "stop", 1);
+				break;
+		}	
+	}
+}
+
 	
 /*
 TO DO:
-
+	This whole damn thing needs to be cleaned up.
 */
 
 
