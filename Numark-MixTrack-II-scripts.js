@@ -3,7 +3,7 @@
 	Numark Mixtrack II Mapping Script Functions
 
 	v0.1 - 05/13/15 
-	patchtheuniform
+	<dshute@gmail.com>
 
 	based of Numark Mixtrack mappings by Matteo <matteo@magm3.com>
 	
